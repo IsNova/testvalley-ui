@@ -1,8 +1,7 @@
 import { getCarousalData } from '@/queries'
 import { useQuery } from '@tanstack/react-query'
-import React, { useRef } from 'react'
+import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore from 'swiper';
 
 import 'swiper/swiper-bundle.css';
 
@@ -15,8 +14,6 @@ function Carousal() {
         queryFn: async () => await getCarousalData("https://api.testvalley.kr/main-banner/all"),
         queryKey: ['carousal'] //Array according to Documentation
     })
-    const parallaxRef = useRef(null);
-
     return (
         <div>
             <Swiper
