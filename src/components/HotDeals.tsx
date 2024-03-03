@@ -21,7 +21,7 @@ function HotDeals() {
     console.log("🚀 ~ HotDeals ~ filterCollection:", filterCollection?.[0]);
 
     return (
-        <div className="mx-auto flex flex-col md:flex-row max-w-5xl items-center justify-between p-6 lg:px-8">
+        <div className="mx-auto flex flex-col md:flex-row max-w-5xl justify-between mt-6 p-4 lg:px-8">
             {/* First Column */}
 
             <div className="w-full md:w-1/3 p-4">

@@ -24,10 +24,8 @@ const Collections = () => {
     console.log("🚀 ~ productsByCategory ~ productsByCategory:", productsByCategory)
     return (
         <div className=''>
-
-
             {Object.entries(productsByCategory ?? {}).map(([title, products]) => (
-                <div className="mx-auto flex flex-col md:flex-row max-w-5xl items-center justify-between p-6 lg:px-8">
+                <div className="mx-auto flex flex-col md:flex-row max-w-5xl items-center justify-between">
                     {(products as any[]).map(product => (
                         <React.Fragment key={product.id}>
                             <ProductList product={product} />

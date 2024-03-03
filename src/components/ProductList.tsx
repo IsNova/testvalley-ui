@@ -2,10 +2,10 @@ import React from 'react'
 
 const ProductList = ({ product }: any) => {
     return (
-        <div className="mx-auto flex flex-col md:flex-row max-w-5xl justify-between p-6 lg:px-8">
+        <div className="mx-auto flex flex-col md:flex-row max-w-5xl justify-between mt-6 p-4 lg:px-6">
             {/* First Column */}
-            <div className="w-full md:w-1/3 p-4">
-                <h2 className="text-2xl font-semibold text-gray-700">{product.title}</h2>
+            <div className="w-full md:w-1/4 p-3">
+                <h2 className="text-2xl font-semibold text-gray-700 line-clamp-2">{product.title}</h2>
                 <h3 className='text-xs text-gray-400 font-medium mt-2'>{product.subtitle}</h3>
             </div>
 
@@ -33,17 +33,18 @@ const ProductList = ({ product }: any) => {
                                     )}
                                 </div>
                             </div>
-                            <p className="text-sm font-serif mt-1 text-gray-700 break-all outline-none">
+                            <p className="text-sm font-serif mt-1 text-gray-700 break-all outline-none line-clamp-2">
                                 {item?.publication?.title}
                             </p>
-                            <div className="text-lg mt-2 font-semibold text-gray-500">
+                            <div className="text-lg mt-2 font-semibold text-gray-700">
                                 {isOnDiscount && (
 
                                     <span className="text-red-400">
                                         {item?.publication?.priceInfo?.discountRate}%
                                     </span>
                                 )}
-                                {isOnDiscount ? item?.publication?.priceInfo?.discountPrice : Number(item?.publication?.priceInfo?.price)}
+                                {new Intl.NumberFormat('en-US').format(isOnDiscount ? item?.publication?.priceInfo?.discountPrice : Number(item?.publication?.priceInfo?.price))}
+                                <span className='text-xs font-medium'>원</span>
                             </div>
                             <div>
                                 {item?.publication?.tagsOnDesc}
