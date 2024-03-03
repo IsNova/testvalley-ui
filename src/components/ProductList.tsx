@@ -2,7 +2,7 @@ import React from 'react'
 
 const ProductList = ({ product }: any) => {
     return (
-        <div className="mx-auto flex flex-col md:flex-row max-w-5xl items-center justify-between p-6 lg:px-8">
+        <div className="mx-auto flex flex-col md:flex-row max-w-5xl justify-between p-6 lg:px-8">
             {/* First Column */}
             <div className="w-full md:w-1/3 p-4">
                 <h2 className="text-2xl font-semibold text-gray-700">{product.title}</h2>
