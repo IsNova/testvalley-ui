@@ -13,7 +13,6 @@ const Collections = () => {
             await getCollectionData("https://api.testvalley.kr/collections?prearrangedDiscount"),
         queryKey: ["collections"], //Array according to Documentation
     });
-    console.log("🚀 ~ Collections ~ collectionData:", collectionData)
     const filterCollection = collectionData?.items?.filter((collection: any) => collection?.type === "SINGLE" && collection.viewType === "TILE")
 
     const productsByCategory = filterCollection?.reduce((acc: any, product: any) => {
@@ -21,7 +20,6 @@ const Collections = () => {
         return acc;
     }, {});
 
-    console.log("🚀 ~ productsByCategory ~ productsByCategory:", productsByCategory)
     return (
         <div className=''>
             {Object.entries(productsByCategory ?? {}).map(([title, products]) => (

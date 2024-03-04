@@ -2,15 +2,15 @@ import React from 'react'
 
 const ProductList = ({ product }: any) => {
     return (
-        <div className="mx-auto flex flex-col md:flex-row max-w-5xl justify-between mt-6 p-4 lg:px-6">
+        <div className="mx-auto flex flex-col lg:flex-row max-w-5xl justify-between mt-6 p-4 lg:px-6">
             {/* First Column */}
-            <div className="w-full md:w-1/4 p-3">
-                <h2 className="text-2xl font-semibold text-gray-700 line-clamp-2">{product.title}</h2>
-                <h3 className='text-xs text-gray-400 font-medium mt-2'>{product.subtitle}</h3>
+            <div className="w-full lg:w-1/4 p-3">
+                <h2 className="text-2xl font-semibold text-gray-700 lg:line-clamp-2">{product?.title}</h2>
+                <h3 className='text-xs text-gray-400 font-medium mt-2'>{product?.subtitle}</h3>
             </div>
 
             {/* Second Column */}
-            <div className="w-4/5 p-4 grid lg:grid-cols-4 grid-cols-2 gap-2">
+            <div className="lg:w-4/5 lg:p-4 grid lg:grid-cols-4 grid-cols-2 gap-2">
                 {/* Product Images */}
                 {product?.items?.slice(1, 5).map((item: any) => {
                     const isOnDiscount = item?.publication?.discounts.length > 0

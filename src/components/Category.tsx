@@ -13,7 +13,6 @@ function Category() {
             await getCategoryData("https://api.testvalley.kr/main-shortcut/all"),
         queryKey: ["category"], //Array according to Documentation
     });
-    console.log("🚀 ~ Category ~ categoryData:", categoryData);
     return (
         <div className="mx-auto flex max-w-5xl items-center justify-between p-6 lg:px-8 mt-10">
             <div className="grid grid-cols-5 md:grid-cols-10 gap-4">
