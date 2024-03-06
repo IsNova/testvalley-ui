@@ -11,6 +11,7 @@ import { useSwiper } from "swiper/react";
 import { Pagination, Parallax, Navigation } from "swiper/modules";
 
 import "swiper/swiper-bundle.css";
+import Image from "next/image";
 
 function Carousal() {
     const {
@@ -49,10 +50,12 @@ function Carousal() {
                         return (
                             <SwiperSlide key={index} className="h-full">
                                 <div className="parallax-bg relative flex justify-between bg-pink-300 w-full flex-1 items-center">
-                                    <img
+                                    <Image
                                         src={banner?.pcImageUrl}
                                         alt={`Slide ${index}`}
                                         className="object-cover w-full h-full"
+                                        width={400}
+                                        height={80}
                                     />
                                 </div>
                             </SwiperSlide>

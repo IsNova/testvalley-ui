@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 
 const ProductList = ({ product }: any) => {
@@ -19,15 +20,19 @@ const ProductList = ({ product }: any) => {
                         <div>
                             <div key={item} className="relative">
                                 <div className="">
-                                    <img
+                                    <Image
                                         src={item?.publication?.media[0]?.uri}
                                         alt={`Product ${item}`}
-                                        className="w-full" />
+                                        className="w-full"
+                                        height={80}
+                                        width={50}
+                                        unoptimized
+                                    />
                                 </div>
                                 <div className="absolute bottom-0.5 left-0.5">
                                     {haveTagOnImage && (
                                         <div className="inline-flex bg-teal-600 rounded-sm font-medium text-white text-xs px-1 py-1">
-                                            <img src="/return-new.svg" className="mr-0.5" />
+                                            <Image src="/return-new.svg" className="mr-0.5" height={5} width={5} alt='return-image' />
                                             <p>{item?.publication?.tagsOnImage[0]}</p>
                                         </div>
                                     )}
@@ -50,16 +55,18 @@ const ProductList = ({ product }: any) => {
                                 {item?.publication?.tagsOnDesc}
                             </div>
                             <div className="flex text-xs text-gray-600">
-                                <img src="/star-darkgray.svg" width={12} height={12} />
+                                <Image src="/star-darkgray.svg" width={12} height={12} alt='star-darkgray' />
                                 {item?.publication?.rating}
                             </div>
                             {item?.publication?.preface && (
                                 <div className="mt-2 text-xs px-2 py-1 inline-flex items-center border border-gray-200 rounded-sm">
-                                    <img
+                                    <Image
                                         src={item?.publication?.prefaceIconUrl}
-                                        alt=""
+                                        alt="preface-icon"
                                         width={12}
-                                        height={12} />
+                                        height={12}
+
+                                    />
                                     {item?.publication?.preface}
                                 </div>
                             )}

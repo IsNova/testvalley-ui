@@ -20,7 +20,7 @@ function Category() {
                     (category: {
                         title: string, imageUrl: string
                     }) => (
-                        <div className="flex flex-col space-x-4 space-y-2 items-center justify-center">
+                        <div className="flex flex-col space-x-4 space-y-2 items-center justify-center cursor-pointer">
                             <div className="">
                                 <Image src={category.imageUrl} width={50} height={50} alt="something" />
                             </div>
