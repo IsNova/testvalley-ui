@@ -12,6 +12,7 @@ import { Pagination, Parallax, Navigation } from "swiper/modules";
 
 import "swiper/swiper-bundle.css";
 import Image from "next/image";
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 
 function Carousal() {
     const {
@@ -41,15 +42,14 @@ function Carousal() {
                     loop={true}
                     pagination={{ clickable: true }}
                     onActiveIndexChange={(swiperCore) => {
-                        setSwiperIndex(swiperCore.activeIndex);
+                        setSwiperIndex(swiperCore.realIndex);
                     }}
-                    navigation
+                // navigation
                 >
                     {bannerData?.map((banner: any, index: number) => {
-                        console.log("🚀 ~ {bannerData?.map ~ index:", index, swiperIndex);
                         return (
                             <SwiperSlide key={index} className="h-full">
-                                <div className="parallax-bg relative flex justify-between bg-pink-300 w-full flex-1 items-center">
+                                <div className="parallax-bg relative w-full flex-1 items-center">
                                     <Image
                                         src={banner?.pcImageUrl}
                                         alt={`Slide ${index}`}
@@ -57,6 +57,24 @@ function Carousal() {
                                         width={400}
                                         height={80}
                                     />
+                                    {
+                                        index === swiperIndex && (
+                                            <div className=" absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-between w-full px-2">
+                                                <button
+                                                    type="button"
+                                                    className="w-11 h-11 rounded-full bg-gray-700 opacity-50 p-2 text-white shadow-sm"
+                                                >
+                                                    <ChevronLeftIcon className="h-6 w-6" aria-hidden="true" />
+                                                </button>
+                                                <button
+                                                    type="button"
+                                                    className="w-11 h-11 rounded-full bg-gray-700 opacity-50 p-2 text-white shadow-sm"
+                                                >
+                                                    <ChevronRightIcon className="h-6 w-6" aria-hidden="true" />
+                                                </button>
+                                            </div>
+                                        )
+                                    }
                                 </div>
                             </SwiperSlide>
                         );
