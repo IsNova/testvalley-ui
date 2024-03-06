@@ -17,8 +17,8 @@ const ProductList = ({ product }: any) => {
                     const isOnDiscount = item?.publication?.discounts.length > 0
                     const haveTagOnImage = item?.publication?.tagsOnImage.length > 0
                     return (
-                        <div>
-                            <div key={item} className="relative">
+                        <div key={item}>
+                            <div className="relative">
                                 <div className="">
                                     <Image
                                         src={item?.publication?.media[0]?.uri}
