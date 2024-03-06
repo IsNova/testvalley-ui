@@ -55,19 +55,21 @@ function Carousal() {
                                         alt={`Slide ${index}`}
                                         className="object-cover w-full h-full"
                                         width={400}
-                                        height={80}
+                                        height={120}
                                     />
                                     {
                                         index === swiperIndex && (
                                             <div className=" absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-between w-full px-2">
                                                 <button
                                                     type="button"
+                                                    onClick={() => swiper.slidePrev()}
                                                     className="w-11 h-11 rounded-full bg-gray-700 opacity-50 p-2 text-white shadow-sm"
                                                 >
                                                     <ChevronLeftIcon className="h-6 w-6" aria-hidden="true" />
                                                 </button>
                                                 <button
                                                     type="button"
+                                                    onClick={() => swiper.slideNext()}
                                                     className="w-11 h-11 rounded-full bg-gray-700 opacity-50 p-2 text-white shadow-sm"
                                                 >
                                                     <ChevronRightIcon className="h-6 w-6" aria-hidden="true" />
