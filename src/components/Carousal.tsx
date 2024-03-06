@@ -75,10 +75,12 @@ function Carousal() {
                     {bannerData?.map((banner: any, index: number) => (
                         <SwiperSlide key={index} className="h-full">
                             <div className="parallax-bg">
-                                <img
+                                <Image
                                     src={banner?.mobileImageUrl}
                                     alt={`Slide ${index}`}
                                     className="object-cover w-full h-full"
+                                    height={80}
+                                    width={800}
                                 />
                             </div>
                         </SwiperSlide>

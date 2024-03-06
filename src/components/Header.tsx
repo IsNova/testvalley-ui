@@ -1,4 +1,5 @@
 import { Bars3Icon, BellIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline'
+import Image from 'next/image'
 
 export default function Header() {
 
@@ -9,7 +10,7 @@ export default function Header() {
                     <div className="flex pl-8 lg:pl-0">
                         <a href="#" className="-m-1.5 p-1.5">
                             <span className="sr-only">Your Company</span>
-                            <img className="h-8 w-auto" src="/testvalley-logo.svg" alt="" />
+                            <Image className="h-8 w-auto" src="/testvalley-logo.svg" alt="" height={8} width={8} />
                         </a>
                     </div>
                     <div className="hidden lg:inline-flex text-teal-400 items-center">
@@ -38,7 +39,7 @@ export default function Header() {
 
                 </div>
                 <div className="hidden lg:flex flex-1 justify-end items-center space-x-2 divide-x">
-                    <img src="/home-event.svg" alt="" className='' />
+                    <Image src="/home-event.svg" alt="" className='' width={8} height={8} />
                     <button className='pl-2'>로그인 / 회원가입</button>
                 </div>
             </nav>
