@@ -39,7 +39,7 @@ export default function Header() {
 
                 </div>
                 <div className="hidden lg:flex flex-1 justify-end items-center space-x-2 divide-x">
-                    <Image src="/home-event.svg" alt="" className='' width={12} height={12} />
+                    <Image src="/home-event.svg" alt="" className='' width={18} height={12} />
                     <button className='pl-2'>로그인 / 회원가입</button>
                 </div>
             </nav>
