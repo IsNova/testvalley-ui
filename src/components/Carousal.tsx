@@ -35,7 +35,7 @@ function Carousal() {
                 <Swiper
                     className="swiper-container relative"
                     modules={[Autoplay, Pagination, Parallax, Navigation]}
-                    slidesPerView={1.6}
+                    slidesPerView={1.7}
                     spaceBetween={30}
                     parallax={true}
                     centeredSlides={true}
@@ -61,6 +61,13 @@ function Carousal() {
                                         width={400}
                                         height={120}
                                     />
+                                    {
+                                        index !== swiperIndex && (
+                                            <div className=" absolute h-full bg-white opacity-50 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-between w-full px-3">
+
+                                            </div>
+                                        )
+                                    }
                                     {
                                         index === swiperIndex && (
                                             <div className=" absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-between w-full px-3">
