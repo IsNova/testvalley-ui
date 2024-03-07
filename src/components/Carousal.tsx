@@ -65,14 +65,14 @@ function Carousal() {
                                                     onClick={() => swiper.slidePrev()}
                                                     className="w-11 h-11 rounded-full bg-gray-700 opacity-50 p-2 text-white shadow-sm"
                                                 >
-                                                    <ChevronLeftIcon className="h-6 w-6" aria-hidden="true" />
+                                                    <ChevronLeftIcon className="h-7 w-7 text-white font-semibold" aria-hidden="true" />
                                                 </button>
                                                 <button
                                                     type="button"
                                                     onClick={() => swiper.slideNext()}
                                                     className="w-11 h-11 rounded-full bg-gray-700 opacity-50 p-2 text-white shadow-sm"
                                                 >
-                                                    <ChevronRightIcon className="h-6 w-6" aria-hidden="true" />
+                                                    <ChevronRightIcon className="h-7 w-7 text-white font-semibold" aria-hidden="true" />
                                                 </button>
                                             </div>
                                         )

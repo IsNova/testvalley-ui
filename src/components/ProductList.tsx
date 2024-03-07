@@ -1,3 +1,4 @@
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline'
 import Image from 'next/image'
 import React from 'react'
 
@@ -5,9 +6,19 @@ const ProductList = ({ product }: any) => {
     return (
         <div className="mx-auto flex flex-col lg:flex-row max-w-5xl justify-between mt-6 p-4 lg:px-6">
             {/* First Column */}
-            <div className="w-full lg:w-1/4 p-3">
-                <h2 className="text-2xl font-semibold text-gray-700 lg:line-clamp-2">{product?.title}</h2>
-                <h3 className='text-xs text-gray-400 font-medium mt-2'>{product?.subtitle}</h3>
+            <div className="flex flex-col justify-between w-full lg:w-1/4 p-3">
+
+                <div >
+                    <h2 className="text-2xl font-semibold text-gray-700 lg:line-clamp-2">{product?.title}</h2>
+                    <h3 className='text-xs text-gray-400 font-medium mt-2'>{product?.subtitle}</h3>
+                </div>
+                <div className="flex space-x-4">
+
+                    <ChevronLeftIcon className="h-6 w-6 text-gray-300 font-thin " aria-hidden="true" />
+
+                    <ChevronRightIcon className="h-6 w-6 text-gray-300 font-thin" aria-hidden="true" />
+
+                </div>
             </div>
 
             {/* Second Column */}
