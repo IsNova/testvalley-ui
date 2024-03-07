@@ -8,7 +8,7 @@ import "swiper/css/parallax";
 import "swiper/css/navigation";
 import { useSwiper } from "swiper/react";
 
-import { Pagination, Parallax, Navigation } from "swiper/modules";
+import { Pagination, Parallax, Navigation, Autoplay } from "swiper/modules";
 
 import "swiper/swiper-bundle.css";
 import Image from "next/image";
@@ -34,12 +34,16 @@ function Carousal() {
             <div className="hidden lg:block">
                 <Swiper
                     className="swiper-container relative"
-                    modules={[Pagination, Parallax, Navigation]}
+                    modules={[Autoplay, Pagination, Parallax, Navigation]}
                     slidesPerView={1.6}
                     spaceBetween={30}
                     parallax={true}
                     centeredSlides={true}
                     loop={true}
+                    autoplay={{
+                        delay: 2500,
+                        disableOnInteraction: false
+                    }}
                     pagination={{ clickable: true }}
                     onActiveIndexChange={(swiperCore) => {
                         setSwiperIndex(swiperCore.realIndex);
@@ -49,17 +53,17 @@ function Carousal() {
                     {bannerData?.map((banner: any, index: number) => {
                         return (
                             <SwiperSlide key={index} className="h-full">
-                                <div className="parallax-bg relative w-full flex-1 items-center">
+                                <div className="parallax-bg relative w-full flex-1 items-center ">
                                     <Image
                                         src={banner?.pcImageUrl}
                                         alt={`Slide ${index}`}
-                                        className="object-cover w-full h-full"
+                                        className="object-cover w-full h-full bg-blend-darken"
                                         width={400}
                                         height={120}
                                     />
                                     {
                                         index === swiperIndex && (
-                                            <div className=" absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-between w-full px-2">
+                                            <div className=" absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-between w-full px-3">
                                                 <button
                                                     type="button"
                                                     onClick={() => swiper.slidePrev()}
@@ -86,11 +90,15 @@ function Carousal() {
             <div className="lg:hidden">
                 <Swiper
                     className="swiper-container"
-                    modules={[Pagination, Navigation]}
+                    modules={[Pagination, Navigation, Autoplay]}
                     slidesPerView={1}
                     centeredSlides={true}
                     loop={true}
                     pagination={{ clickable: true }}
+                    autoplay={{
+                        delay: 2500,
+                        disableOnInteraction: false
+                    }}
                 >
                     {bannerData?.map((banner: any, index: number) => (
                         <SwiperSlide key={index} className="h-full">
